@@ -35,3 +35,5 @@ rtps:
     receive: true
   - msg: VehicleStatus
     send: true
+  - msg: ManualControlSetpoint
+    receive: true
