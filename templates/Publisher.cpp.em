@@ -173,6 +173,7 @@ bool @(topic)_Publisher::init(const std::string &ns, std::string topic_name)
 @[    end if]@
 	// ROS2 default publish mode QoS policy
 	Wparam.qos.m_publishMode.kind = ASYNCHRONOUS_PUBLISH_MODE;
+	Wparam.qos.m_reliability.kind = BEST_EFFORT_RELIABILITY_QOS;
 @[else]@
 	std::string topicName = ns;
 @[end if]@
