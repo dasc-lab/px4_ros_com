@@ -39,3 +39,5 @@ rtps:
     receive: true
   - msg: BatteryStatus
     send: true
+  - msg: GpsInjectData
+    receive: true
