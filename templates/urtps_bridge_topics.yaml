@@ -41,3 +41,5 @@ rtps:
     send: true
   - msg: GpsInjectData
     receive: true
+  - msg: ExternalController
+    receive: true
