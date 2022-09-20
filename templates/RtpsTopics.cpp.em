@@ -1,4 +1,4 @@
-@###############################################
+
 @#
 @# EmPy template for generating RtpsTopics.cpp file
 @#
@@ -122,7 +122,13 @@ void RtpsTopics::publish(const uint8_t topic_ID, char data_buffer[], size_t len)
 		@(topic)_msg_t st;
 		eprosima::fastcdr::FastBuffer cdrbuffer(data_buffer, len);
 		eprosima::fastcdr::Cdr cdr_des(cdrbuffer);
-		st.deserialize(cdr_des);
+		try {
+			st.deserialize(cdr_des);
+		}
+		catch(...) {
+			printf("catching deserialize error\n");
+			return;
+		}
 @[    if topic == 'Timesync' or topic == 'timesync']@
 		_timesync->processTimesyncMsg(&st, &_@(topic)_pub);
 @[    end if]@
